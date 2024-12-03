@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header Section -->
@@ -48,30 +47,34 @@
             <div class="project-item">
                 <h3>Adidas Store</h3>
                 <p>Developed interactive Power BI dashboards to analyze sales performance, identify trends, and optimize inventory management for Adidas, resulting in improved sales and efficient stock control.</p>
-                 <!-- Preview Image -->
-            <img src="Images/addidas.jpg" alt="Addidas Store Preview" class="project-preview" onclick="showEmbed('addidas')">
-            <!-- Power BI Embed (Hidden initially) -->
-            <div id="addidas" class="project-embed">
-                <iframe title="ADDIDAS DATASET" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=2be84255-5035-4c2b-a887-92f3df91b3a0&autoAuth=true&ctid=940b29f2-18a4-4aad-9354-e83cbb13f27d" frameborder="0" allowFullScreen="true"></iframe>
+                <!-- Preview Image -->
+                <img src="Images/addidas.jpg" alt="Addidas Store Preview" class="project-preview" onclick="showEmbed('addidas')">
+                <!-- Power BI Embed (Hidden initially) -->
+                <div id="addidas" class="project-embed" style="display:none;">
+                    <iframe src="path/to/ADDIDAS DATASET.pdf" width="600" height="400"></iframe> <!-- Correct the embed method -->
+                </div>
             </div>
 
             <div class="project-item">
                 <h3>Employee Attrition Analysis</h3>
                 <p>Predicted employee turnover trends using Microsoft Excel and advanced data visualization techniques.</p>
                 <!-- Preview Image -->
-            <img src="Images/HR ANALYTICS.jpg" alt="Employee Attrition Preview" class="project-preview" onclick="showEmbed('attrition')">
-            <!-- Power BI Embed (Hidden initially) -->
-            <div id="attrition" class="project-embed">
-                <a href="HR ANALYTICS/Hr Analytics Dataset.xlsx" target="_blank">View Project</a>
+                <img src="Images/HR ANALYTICS.jpg" alt="Employee Attrition Preview" class="project-preview" onclick="showEmbed('attrition')">
+                <!-- Power BI Embed (Hidden initially) -->
+                <div id="attrition" class="project-embed" style="display:none;">
+                    <a href="HR ANALYTICS/Hr Analytics Dataset.xlsx" target="_blank">View Project</a>
+                </div>
             </div>
 
             <div class="project-item">
                 <h3>Social Media Insights</h3>
                 <p>Tracked engagement metrics across platforms to enhance audience reach and marketing ROI.</p>
-                 <!-- Preview Image -->
-            <img src="images/social-media-preview.jpg" alt="Social Media Insights Preview" class="project-preview" onclick="showEmbed('social-media')">
-            <!-- Power BI Embed (Hidden initially) -->
-                <a href="SOCIAL MEDIA/Data Analytics template - Task 3_final.pptx" target="_blank">View Project</a>
+                <!-- Preview Image -->
+                <img src="images/social-media-preview.jpg" alt="Social Media Insights Preview" class="project-preview" onclick="showEmbed('social-media')">
+                <!-- Power BI Embed (Hidden initially) -->
+                <div id="social-media" class="project-embed" style="display:none;">
+                    <a href="SOCIAL MEDIA/Data Analytics template - Task 3_final.pptx" target="_blank">View Project</a>
+                </div>
             </div>
         </div>
     </section>
@@ -102,20 +105,22 @@
     <footer>
         <p>© 2024 Abiola Lawal. Built with passion and data.</p>
     </footer>
-<script>
-    function showEmbed(projectId) {
-        var embed = document.getElementById(projectId);
-        var preview = document.querySelector(`img[onclick="showEmbed('${projectId}')"]`);
-        
-        // Toggle visibility of the embed content
-        if (embed.style.display === "none" || embed.style.display === "") {
-            embed.style.display = "block";
-            preview.style.display = "none"; // Hide the preview image
-        } else {
-            embed.style.display = "none";
-            preview.style.display = "block"; // Show the preview image again
+
+    <!-- JavaScript for Embeds -->
+    <script>
+        function showEmbed(projectId) {
+            var embed = document.getElementById(projectId);
+            var preview = document.querySelector(`img[onclick="showEmbed('${projectId}')"]`);
+            
+            // Toggle visibility of the embed content
+            if (embed.style.display === "none" || embed.style.display === "") {
+                embed.style.display = "block";
+                preview.style.display = "none"; // Hide the preview image
+            } else {
+                embed.style.display = "none";
+                preview.style.display = "block"; // Show the preview image again
+            }
         }
-    }
-</script>                
+    </script>
 </body>
 </html>
